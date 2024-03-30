@@ -5,13 +5,33 @@ import { RegisterInputNameType } from "../types";
 import { REGISTER_INPUTS_DATA } from "../data";
 import { RegisterFormInputsNamesInt } from "../interfaces";
 import Button from "../components/ui/Button";
+import axiosInstance from "../config/axios.config";
+import toast from "react-hot-toast";
+import { useState } from "react";
+import { AxiosError } from "axios";
 
 const RegisterPage = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<RegisterFormInputsNamesInt>();
+  const [isLoading, setIsLoading] = useState(false);
+  const { 
+    register, handleSubmit, formState: { errors } 
+  } = useForm<RegisterFormInputsNamesInt>();
 
-  const onSubmitFun: SubmitHandler<RegisterFormInputsNamesInt> = (data) => {
+  const onSubmitFun: 
+    SubmitHandler<RegisterFormInputsNamesInt> = 
+  async (registerData) => {
     console.log("onSubmitFun worked!!");
-    console.log(data);
+    console.log(registerData);
+
+    try {
+      setIsLoading(true);
+      const res = await axiosInstance.post("auth/local/register", registerData);
+      toast.success('Successfully toasted!')
+      console.log("success res", res);
+    } catch (err) {
+      const errObj = err as AxiosError<{ error: { message: string } }>;
+      toast.error(errObj.response?.data.error.message as string);
+      console.log("error happened:", err);
+    } finally {setIsLoading(false)}
   }
 
   console.log(errors);
@@ -46,7 +66,9 @@ const RegisterPage = () => {
 
       <form onSubmit={handleSubmit(onSubmitFun)} className="space-y-4">
         {renderRegisterFromInputs()}
-        <Button fullWidth>Register</Button>
+        <Button isDisabled={isLoading} fullWidth>
+          { isLoading ? "Loading..." : "Register"}
+        </Button>
       </form>
 
     </div>
