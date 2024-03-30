@@ -1,0 +1,1 @@
+export type RegisterInputNameType = "username" | "email" | "password";

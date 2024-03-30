@@ -1,0 +1,161 @@
+V1: -Project #3 Challenges-:
+  the new stuff we will learn G.W.
+V2: -What Is An API-:
+  API definition and quick review.
+V3: -What Is A Rest API-:
+  introduction about Rest API.
+V4: -What Are Crud Operations-:
+  Quick overview in the CRUD operation.
+V5: -What Are Path Parameters-:
+  The definition of path parameters.
+  Example:
+    https://example.com/users/{userId}
+      The userId is a path parameter.
+  Path parameter definition:
+    Placeholder within the path component of a URL that represents a variable value.
+  The path component in this case is:
+    users/{userId}
+V6: -What Are Query Parameters-:
+  The definition of Query parameters.
+  Example:
+    https://example.com/users/{userId}?q1=qv1&q2=qv2&q3=qv3
+      We have a query that have three key-value pairs:
+        q1 and its value is qv1.
+        q2 and its value is qv2.
+        q3 and its value is qv3.
+  Query parameters definition:
+    Additional information appended to the end of a URL after a question mark.
+    Used to provide specific details or criteria to the server when making a request.  
+    consist of key-value pairs separated by an ampersand &.
+    with the key and value separated by an equals sign =.
+    Often used to filter, sort, or paginate data when retrieving resources from a server. 
+    Flexible, standardized way to pass info to the server without altering the URL path structure.
+V7: -Postman Setup-:
+  Postman introduction and setup.
+V8: -API Collection-:
+  The collection is a folder that can hold a bunch of related requests.
+V9: -Collection Environment Variables-:
+  We can create a variable and assign to a value with this we have the ability to change it easily.
+V10: -Organize API Collection Requests-:
+  Is better to insert the query param in the specific tabs of it, and not hard code it in the URL.
+V11: -Post Request-:
+  How to get a writing request and transform it to acceptable form to test in Postman.
+V12: -Put And Delete Requests-:
+  How to get a writing request and transform it to acceptable form to test in Postman.
+V13: -Login User And Get Token-:
+  We can create a folder called Auth to test the login and register requests in our website.
+  After a login process we have from the Backend dev a token. 
+    This token should be inserted in each authenticated process to confirm the owned permissions. 
+V14: -How JWT Works-:
+  Overview about how the JWT behave.  
+V15 -What Is Bearer Token-:
+  Overview about the Bearer token.  
+V16 -Install Strapi Project-:
+  Use the Strapi software to handle the Backend of our site.
+V17 -Create A New Collection In Strapi-:
+  Create a new data model with a data.
+V18 -Show Todo Via API-:
+  Have an global API endpoint for testing.
+V19 -Authenticated Todos-:
+  Have a protected endpoint and test it in PostMan also.
+V20 -Login And Register-:
+  To Register a new user in Strapi we should call the endpoint /api/auth/local/register
+  To Login in Strapi we should call the endpoint /api/auth/local
+V21 -Database Relationships-:
+  We can have a Relationship between two models in the content-type builder.
+V22 -Get User Profile Data-:
+  We can get the basic information about a user by: 
+    Activate the me checkbox.
+    Call the /users/me endpoint. 
+V23 -CRUD Operations On My Todos-:
+  Apply the CRUD operations.
+V24 -Clone Starter Repo-:
+  Clone the repo from:
+    https://github.com/codeawy/fullstack-todo-app-online-course
+V25 -Validation With React Hook Form-:
+  Use the library React Hook Form to apply the from validation easily and quickly.
+V26 -Form Input Errors-:
+  If we use a custom component instead of the normal input HTML element that will cause problems.
+V27 -What Is ForwaredRef-:
+  Utility function in react. 
+  Let you expose a child components DOM to a parent component with a ref.
+V28 -Validation Rules-:
+  Set up the rules that the users should respect in the form fill out process.
+V29 -Error Message Component-:
+  Have a dedicated component for from errors. 
+V30 -Axios Setup Instance-:
+  Setup Axios instance to start performing our API requests.
+V31 -Pending, Fulfilled, And Rejected-:
+  Pending: 
+    The first phase that will always happen.
+  Fulfilled:
+    If the request succeeded.
+  Rejected:
+    If the request failed.
+===================================================================================================
+
+V32 -Refactor Register-:
+STOP 203 MIN 0
+V33 -Validation Schema With Yup-:
+
+V34 -Handle User Register With Feedback-:
+
+V35 -Disabled Button While Submitting-:
+
+V36 -Axios Error Handling-:
+
+V37 -User Login-:
+
+V38 -Project Flow After Login-:
+
+V39 -User Logout-:
+
+V40 -Fetch Data Using useEffect-:
+
+V41 -React Query-:
+
+V42 -useQuery Hook-:
+
+V43 -Error Handling And Requst Options-:
+
+V44 -Build Your Own Authenticated Custom Hook-:
+
+V45 -Make A Custom Modal-:
+
+V46 -Todo To Edit Setter-:
+
+V47 -Update Authenticated Todo Via Api-:
+
+V48 -Refetch When Query Key Changes-:
+
+V49 -Remove Todo Modal-:
+
+V50 -API Delete Todo Request-:
+
+V51 -Todo Row Skeleton-:
+
+V52 -Post A New Todo-:
+
+V53 -Fix Query Key, And Button Type Issues-:
+
+V54 -Important Update About Models Relationships-:
+
+V55 -Associate User With Todo-:
+
+V56 -Generate Fake Todos-:
+
+V57 -Paginator For API Pagination-:
+
+V58 -Explain API Pagination-:
+
+V59 -Build Your Own API Pagination Component Part 1-:
+
+V60 -Build Your Own API Pagination Component Part 2-:
+
+V61 -API Sorting And Page Size-:
+
+{
+  "email": "test@test.com",
+  "username": "ahmed"
+  "password": "123321",
+}
