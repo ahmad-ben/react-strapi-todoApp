@@ -1,4 +1,4 @@
-import { RegisterInputsDataInt } from "../interfaces";
+import { LoginInputsDataInt, RegisterInputsDataInt } from "../interfaces";
 
 export const REGISTER_INPUTS_DATA: RegisterInputsDataInt[] = [
   {
@@ -36,3 +36,27 @@ export const REGISTER_INPUTS_DATA: RegisterInputsDataInt[] = [
   },
 ];
 
+export const LOGIN_INPUTS_DATA: LoginInputsDataInt[] = [
+  {
+    placeHolder: "Email address",
+    name: "identifier",
+    rules: { 
+      required: "Email is required.",
+      pattern: { 
+        value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+        message: "Not a valid email"
+      }
+    }
+  },
+  {
+    placeHolder: "Password",
+    name: "password",
+    rules: { 
+      required: "Password is required.",
+      minLength: {
+        value: 6,
+        message: "The password is less than 6"
+      }
+    }
+  },
+];

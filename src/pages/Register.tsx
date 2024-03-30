@@ -16,7 +16,10 @@ const RegisterPage = () => {
     register, handleSubmit, formState: { errors } 
   } = useForm<RegisterFormInputsNamesInt>();
 
-  const onSubmitFun: 
+
+
+  /* ======= Functions ======= */
+  const onSubmitFun:
     SubmitHandler<RegisterFormInputsNamesInt> = 
   async (registerData) => {
     console.log("onSubmitFun worked!!");
@@ -43,14 +46,14 @@ const RegisterPage = () => {
         <Input 
           placeholder={inputData.placeHolder}
           {...register(
-            inputData.name as RegisterInputNameType, 
+            inputData.name, 
             inputData.rules
           )} 
         />
         {
-          errors[inputData.name as RegisterInputNameType] && 
+          errors[inputData.name] && 
           <InputErrorMessage 
-            msg={errors[inputData.name as RegisterInputNameType]?.message} 
+            msg={errors[inputData.name]?.message} 
           />
         }
       </div>
