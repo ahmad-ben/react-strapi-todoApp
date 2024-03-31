@@ -92,21 +92,21 @@ V31 -Pending, Fulfilled, And Rejected-:
     If the request succeeded.
   Rejected:
     If the request failed.
+V32 -Refactor Register-:
+  Follow the DRY principal.
+V33 -Validation Schema With Yup-:
+  Use Yup package to validate the schema, it's similar to join package.
+V34 -Handle User Register With Feedback-:
+  Get the err mess from the backend and display it by the toast package.
+V35 -Disabled Button While Submitting-:
+  Disable the register button to avoid useless requests.
+V36 -Axios Error Handling-:
+  Use the Axios provided errors to have a better user experience.
+V37 -User Login-:
+  Setup the functionality for the login page.
+V38 -Project Flow After Login-:
 ===================================================================================================
 
-V32 -Refactor Register-:
-STOP 203 MIN 0
-V33 -Validation Schema With Yup-:
-
-V34 -Handle User Register With Feedback-:
-
-V35 -Disabled Button While Submitting-:
-
-V36 -Axios Error Handling-:
-
-V37 -User Login-:
-
-V38 -Project Flow After Login-:
 
 V39 -User Logout-:
 
@@ -153,9 +153,3 @@ V59 -Build Your Own API Pagination Component Part 1-:
 V60 -Build Your Own API Pagination Component Part 2-:
 
 V61 -API Sorting And Page Size-:
-
-{
-  "email": "test@test.com",
-  "username": "ahmed"
-  "password": "123321",
-}

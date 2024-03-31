@@ -1,7 +1,6 @@
 import InputErrorMessage from "../components/InputErrorMessage";
 import Input from "../components/ui/Input";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { RegisterInputNameType } from "../types";
 import { REGISTER_INPUTS_DATA } from "../data";
 import { RegisterFormInputsNamesInt } from "../interfaces";
 import Button from "../components/ui/Button";
@@ -9,27 +8,28 @@ import axiosInstance from "../config/axios.config";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { AxiosError } from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { 
     register, handleSubmit, formState: { errors } 
   } = useForm<RegisterFormInputsNamesInt>();
-
-
+  const navigate = useNavigate();
 
   /* ======= Functions ======= */
   const onSubmitFun:
     SubmitHandler<RegisterFormInputsNamesInt> = 
   async (registerData) => {
-    console.log("onSubmitFun worked!!");
-    console.log(registerData);
-
+    
     try {
       setIsLoading(true);
       const res = await axiosInstance.post("auth/local/register", registerData);
-      toast.success('Successfully toasted!')
-      console.log("success res", res);
+      toast.success(
+        "Successfully registered, navigate to login page in 2 seconds.",
+        { duration: 1500 }
+      );
+      setTimeout(() => navigate("/login") , 2000);
     } catch (err) {
       const errObj = err as AxiosError<{ error: { message: string } }>;
       toast.error(errObj.response?.data.error.message as string);
@@ -72,6 +72,14 @@ const RegisterPage = () => {
         <Button isDisabled={isLoading} fullWidth>
           { isLoading ? "Loading..." : "Register"}
         </Button>
+
+        <p className="text-center text-sm text-gray-500 space-x-2">
+          <span>have an account?</span>
+          <Link to={"/login"} className="underline text-indigo-600 font-semibold">
+            Login
+          </Link>
+        </p>
+
       </form>
 
     </div>
